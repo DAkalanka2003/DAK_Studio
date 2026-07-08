@@ -1441,17 +1441,24 @@ footer {
 }
 
 /* ============ MOBILE APP TAB BAR ============ */
+/* ============ MOBILE APP TAB BAR ============ */
 .tabbar {
-  display: flex; /* 'none' thibuna nisa mobile meka display wenna flex kalā */
+  display: flex; /* Mobile device ekedi penenna 'flex' damma */
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 999; /* Higher z-index to stay on top of body content */
+  z-index: 9999; /* Pitipassen adala thiyena severe layer walata udin penenna */
   height: calc(var(--tab-h) + env(safe-area-inset-bottom));
   padding-bottom: env(safe-area-inset-bottom);
-  background: rgba(13, 11, 30, 0.98); /* Slightly higher opacity to stop bleed-through */
-  backdrop-filter: blur(18px);
+  
+  /* Semi-transparent background eka wenuwata Solid Background color ekak damma */
+  background-color: #0d0b1e; 
+  
+  /* Bleed-through options nawaththanna me attributes damma */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  
   border-top: 1px solid var(--line-strong);
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
@@ -1461,6 +1468,7 @@ footer {
 .tabbar-inner {
   display: flex;
   height: var(--tab-h);
+  width: 100%;
 }
 
 .tab {
@@ -1476,6 +1484,7 @@ footer {
   letter-spacing: .08em;
   text-transform: uppercase;
   transition: .25s;
+  text-decoration: none; /* Links ekka link color problem nahathara karanna */
 }
 
 .tab svg {
@@ -1493,7 +1502,6 @@ footer {
 .tab.active svg {
   filter: drop-shadow(0 0 8px rgba(59, 107, 255, .6));
 }
-
 /* ============ RESPONSIVE ============ */
 @media(max-width:1000px) {
   .hero-emblem {
