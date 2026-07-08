@@ -1617,6 +1617,7 @@ footer {
     text-align: center;
     gap: 6px;
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     transform: translateX(calc(100% + 20px));
     transition: transform .4s var(--ease);
@@ -1653,8 +1654,9 @@ footer {
     padding: 0;
     min-width: 0;
     width: 100%;
-    max-width: 280px;
-    align-items: center;
+    max-width: 100%;
+    box-sizing: border-box;
+    align-items: stretch;
     max-height: 0;
     overflow: hidden;
     gap: 0;
@@ -1662,8 +1664,9 @@ footer {
   }
 
   .nav-dd.open .nav-dd-menu {
-    max-height: 240px;
-    padding: 4px 0 8px
+    max-height: 260px;
+    overflow-y: auto;
+    padding: 4px 2px 8px
   }
 
   .nav-dd.open .nav-dd-toggle .chev {
@@ -1671,8 +1674,18 @@ footer {
   }
 
   .nav-dd-menu a {
-    justify-content: center;
-    gap: 10px
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word
+  }
+
+  .nav-dd-menu a .k {
+    margin-left: 6px;
+    white-space: nowrap
   }
 
   .nav-cta {
