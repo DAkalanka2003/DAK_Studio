@@ -36,10 +36,27 @@ sections.forEach(s => s && spy.observe(s));
 /* ---------- MOBILE MENU ---------- */
 const burger = document.getElementById("burger");
 const navLinks = document.getElementById("navLinks");
-burger.addEventListener("click", () => { burger.classList.toggle("open"); navLinks.classList.toggle("open"); });
-navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-  burger.classList.remove("open"); navLinks.classList.remove("open");
+const dd = document.querySelector(".nav-dd");
+const ddToggle = document.querySelector(".nav-dd-toggle");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("open");
+  navLinks.classList.toggle("open");
+  if (!navLinks.classList.contains("open")) dd.classList.remove("open");
+});
+navLinks.querySelectorAll("a:not(.nav-dd-toggle)").forEach(a => a.addEventListener("click", () => {
+  burger.classList.remove("open"); navLinks.classList.remove("open"); dd.classList.remove("open");
 }));
+
+/* Work dropdown: on mobile the first tap expands/collapses the
+   filter list instead of navigating away; on desktop hover already
+   handles it, so this only intervenes below the 720px breakpoint. */
+ddToggle.addEventListener("click", e => {
+  if (matchMedia("(max-width: 720px)").matches) {
+    e.preventDefault();
+    dd.classList.toggle("open");
+  }
+});
 
 /* ---------- REVEAL ON SCROLL ---------- */
 const rev = new IntersectionObserver(es => {
