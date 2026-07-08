@@ -1667,59 +1667,61 @@ footer {
     text-align: left
   }
 
-  .nav-dd-menu {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    background: none;
-    border: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-    padding: 0;
-    min-width: 0;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    align-items: stretch;
-    max-height: 0;
-    overflow: hidden;
-    gap: 0;
-    transition: max-height .35s var(--ease), padding .35s var(--ease)
-  }
+  /* ============ DROPDOWN CONTAINER FIX ============ */
+.nav-dd-menu {
+  position: relative; /* Overflow padding and layout fix */
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  padding: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  max-height: 0;
+  overflow: hidden;
+  gap: 0;
+  transition: max-height .35s var(--ease, ease), padding .35s var(--ease, ease);
+}
 
-  .nav-dd.open .nav-dd-menu {
-    max-height: 260px;
-    overflow-y: auto;
-    padding: 4px 2px 8px
-  }
+.nav-dd.open .nav-dd-menu {
+  max-height: 350px; /* Text items thiyaganna height eka tikak wadi kala */
+  overflow-y: auto;
+  padding: 8px 0;
+}
 
-  .nav-dd.open .nav-dd-toggle .chev {
-    transform: rotate(180deg)
-  }
+.nav-dd.open .nav-dd-toggle .chev {
+  transform: rotate(180deg);
+}
 
-  .nav-dd-menu a {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    column-gap: 10px;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-    padding: 10px 13px 10px 26px;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    background: rgba(255, 255, 255, .03);
-    border-radius: 8px;
-    margin-bottom: 2px
-  }
+/* ============ DROPDOWN ITEMS ALIGNMENT FIX ============ */
+.nav-dd-menu a {
+  display: flex; /* Grid ekata wada Flex layout eka mobile screen ekata safe */
+  align-items: center;
+  justify-content: space-between; /* Category name left, count number right */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 10px 14px; /* Inner spacing alignment fix */
+  margin-bottom: 4px;
+  background: rgba(255, 255, 255, .05);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+}
 
-  .nav-dd-menu a .k {
-    flex-shrink: 0;
-    white-space: nowrap
-  }
-
+/* Sub-items count number (06, 01, 03 etc.) */
+.nav-dd-menu a .k {
+  flex-shrink: 0;
+  white-space: nowrap;
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
 
   .nav-cta {
     margin-left: 0;
