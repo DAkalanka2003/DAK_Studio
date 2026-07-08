@@ -1639,7 +1639,13 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: stretch
+  }
+
+  .nav-dd-toggle {
+    width: 100%;
+    justify-content: space-between !important;
+    text-align: left
   }
 
   .nav-dd-menu {
@@ -1674,19 +1680,24 @@ footer {
   }
 
   .nav-dd-menu a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     width: 100%;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
+    padding-left: 26px;
     white-space: normal;
     overflow-wrap: break-word;
     word-break: break-word
   }
 
   .nav-dd-menu a .k {
-    margin-left: 6px;
+    flex-shrink: 0;
     white-space: nowrap
   }
+
 
   .nav-cta {
     margin-left: 0;
