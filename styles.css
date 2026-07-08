@@ -1583,10 +1583,15 @@ footer {
 
   .nav-links {
     position: fixed;
-    inset: 0;
-    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(78vw, 300px);
     height: 100dvh;
     background: var(--ink-2);
+    border-left: 1px solid var(--line-strong);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, .5);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1597,7 +1602,7 @@ footer {
     transform: translateX(100%);
     transition: transform .45s var(--ease);
     z-index: 90;
-    padding: 110px 28px 48px
+    padding: 110px 24px 48px
   }
 
   .nav-links.open {
