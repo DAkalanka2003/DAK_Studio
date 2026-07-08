@@ -1685,7 +1685,7 @@ footer {
     gap: 10px;
     width: 100%;
     box-sizing: border-box;
-    text-align: left;
+    text-align: right;
     padding-right: 26px;
     white-space: normal;
     overflow-wrap: break-word;
