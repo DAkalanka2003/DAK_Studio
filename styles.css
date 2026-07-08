@@ -1711,7 +1711,7 @@ footer {
   margin-bottom: 5px;
   
   /* Visual Contrast Fixes */
-  background: rgba(255, 255, 255, 0.03); /* Main item background එකට වඩා subtle/darker tint එකක් */
+  background: rgba(59, 107, 255, .14); /* Main item background එකට වඩා subtle/darker tint එකක් */
   border: 1px solid rgba(255, 255, 255, 0.05); /* Soft border line එකක් */
   border-radius: 6px;
   text-decoration: none;
@@ -1735,7 +1735,7 @@ footer {
   flex-shrink: 0;
   white-space: nowrap;
   font-size: 0.7rem; /* Number text size eka font size ekata adjust kara */
-  color: var(--ac, #3b6bff); /* Number එක accent color එකෙන් highlight kara */
+  color: white; /* Number එක accent color එකෙන් highlight kara */
   font-weight: 600;
 }
 
