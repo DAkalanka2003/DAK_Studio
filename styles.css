@@ -1644,6 +1644,7 @@ footer {
 
   .nav-dd-toggle {
     width: 100%;
+    justify-content: space-between !important;
     text-align: left
   }
 
@@ -1679,17 +1680,20 @@ footer {
   }
 
   .nav-dd-menu a {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    column-gap: 10px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
-    text-align: right;
-    padding-right: 26px;
-    white-space: normal;
+    text-align: left;
+    padding: 10px 13px 10px 26px;
     overflow-wrap: break-word;
-    word-break: break-word
+    word-break: break-word;
+    background: rgba(255, 255, 255, .03);
+    border-radius: 8px;
+    margin-bottom: 2px
   }
 
   .nav-dd-menu a .k {
