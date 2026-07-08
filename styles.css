@@ -1102,12 +1102,14 @@ header.nav.scrolled .nav-inner {
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 22px
 }
 
 .card {
+  flex: 0 1 calc((100% - 22px * 2) / 3);
   position: relative;
   border-radius: 14px;
   overflow: hidden;
@@ -1550,8 +1552,8 @@ footer {
     grid-template-columns: 1fr
   }
 
-  .gallery {
-    grid-template-columns: repeat(2, 1fr)
+  .gallery .card {
+    flex-basis: calc((100% - 22px) / 2)
   }
 
   .process {
@@ -1725,8 +1727,8 @@ footer {
     border-bottom: 1px solid var(--line)
   }
 
-  .gallery {
-    grid-template-columns: 1fr
+  .gallery .card {
+    flex-basis: 100%
   }
 
   .card .links,
