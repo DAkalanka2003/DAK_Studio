@@ -1630,9 +1630,28 @@ footer {
   }
 
   .nav-item {
+    width: 100%;
+    box-sizing: border-box;
     font-size: .84rem;
-    padding: 8px 12px;
-    justify-content: center
+    padding: 10px 13px 10px 12px;
+    justify-content: space-between;
+    text-align: left;
+    background: rgba(255, 255, 255, .03);
+    border-radius: 8px;
+    margin-bottom: 2px
+  }
+
+  .nav-item.active::before {
+    display: none
+  }
+
+  .nav-cta {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+    background: rgba(59, 107, 255, .1);
+    border-color: rgba(59, 107, 255, .4)
   }
 
   .nav-dd {
