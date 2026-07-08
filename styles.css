@@ -1590,8 +1590,7 @@ footer {
 @media(max-width:720px) {
   html:has(.nav-links.open),
   body:has(.nav-links.open) {
-    overflow: hidden;
-    height: 100%
+    overflow: hidden
   }
 
   body:has(.nav-links.open) .tabbar {
@@ -1602,26 +1601,25 @@ footer {
     position: fixed;
     top: 84px;
     right: 12px;
-    bottom: 12px;
     left: auto;
-    width: min(68vw, 260px);
-    height: auto;
-    max-height: calc(100dvh - 96px);
+    width: min(55vw, 240px);
+    height: 80%;
+    max-height: min(56vh, 380px);
     background: var(--ink-2);
     border: 1px solid var(--line-strong);
-    border-radius: 20px;
+    border-radius: 18px;
     box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
     text-align: center;
-    gap: 10px;
+    gap: 6px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transform: translateX(calc(100% + 20px));
-    transition: transform .45s var(--ease);
+    transition: transform .4s var(--ease);
     z-index: 90;
-    padding: 26px 20px
+    padding: 14px
   }
 
   .nav-links.open {
@@ -1629,7 +1627,7 @@ footer {
   }
 
   .nav-item {
-    font-size: .9rem;
+    font-size: .84rem;
     padding: 8px 12px;
     justify-content: center
   }
@@ -1650,11 +1648,24 @@ footer {
     border: 0;
     box-shadow: none;
     backdrop-filter: none;
-    padding: 6px 0 4px;
+    padding: 0;
     min-width: 0;
     width: 100%;
     max-width: 280px;
-    align-items: center
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    gap: 0;
+    transition: max-height .35s var(--ease), padding .35s var(--ease)
+  }
+
+  .nav-dd.open .nav-dd-menu {
+    max-height: 240px;
+    padding: 4px 0 8px
+  }
+
+  .nav-dd.open .nav-dd-toggle .chev {
+    transform: rotate(180deg)
   }
 
   .nav-dd-menu a {
@@ -1707,6 +1718,7 @@ footer {
   .hstrip:nth-child(2) {
     border-right: 0
   }
+
 
   .hstrip:nth-child(1),
   .hstrip:nth-child(2) {
