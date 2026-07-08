@@ -1602,8 +1602,8 @@ footer {
     top: 84px;
     right: 12px;
     left: auto;
-    width: min(55vw, 240px);
-    height: 80%;
+    width: min(64vw, 240px);
+    height: auto;
     max-height: min(56vh, 380px);
     background: var(--ink-2);
     border: 1px solid var(--line-strong);
